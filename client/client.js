@@ -84,9 +84,11 @@ document.querySelector("#open-lock").addEventListener("click", unlock)
 
 function lock(){
     socket.emit("lock", 42)
+    LED.writeSync(1); 
 }
 
 
 function unlock(){
     socket.emit("unlock", 12)
+    LED.writeSync(0)
 }
