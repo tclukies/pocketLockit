@@ -3,11 +3,11 @@ var io= require("socket.io-client")
 var socket = io(process.env.SOCKET_HOST || "http://localhost:3000");
 //   socket.emit('chat message', $('#m').val());
 
-function lock(){
-    socket.emit("lock", 99)
-}
+// function lock(){
+//     socket.emit("lock", 99)
+// }
 
-lock()
+// lock()
 
 socket.on("unlock now", onUnlock)
 
