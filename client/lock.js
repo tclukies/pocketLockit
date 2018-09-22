@@ -55,25 +55,25 @@ function lock(event) {
         });
 }
 
-document.querySelector(".lock-log").addEventListener("click", lockLog);
+// document.querySelector(".lock-log").addEventListener("click", lockLog);
 
-function lockLog(event) {
-    event.preventDefault();
-    window.location.href = "/lockLog.html";
-}
+// function lockLog(event) {
+//     event.preventDefault();
+//     window.location.href = "/lockLog.html";
+// }
 
-document.querySelector(".sign-out").addEventListener("click", signOut);
+// document.querySelector(".sign-out").addEventListener("click", signOut);
 
-function signOut(event) {
-    event.preventDefault();
-    window.location.href = "/index.html";
-}
+// function signOut(event) {
+//     event.preventDefault();
+//     window.location.href = "/index.html";
+// }
 
 
 var socket = io();
 //   socket.emit('chat message', $('#m').val());
-document.querySelector(".closed-lock").addEventListener("click", lock)
-document.querySelector(".open-lock").addEventListener("click", unlock)
+document.querySelector("#closed-lock").addEventListener("click", lock)
+document.querySelector("#open-lock").addEventListener("click", unlock)
 
 
 function lock(){
