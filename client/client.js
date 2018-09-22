@@ -1,7 +1,6 @@
 
 var socket = io();
-const Gpio = require('onoff').Gpio;
-const LED = new Gpio(4, 'out'); // gpio 4 as out
+
 
 // document.querySelector("#open-lock").addEventListener("click", unlock);
 
@@ -86,11 +85,11 @@ document.querySelector("#open-lock").addEventListener("click", unlock)
 
 function lock(){
     socket.emit("lock", 42)
-    LED.writeSync(1); 
+
 }
 
 
 function unlock(){
     socket.emit("unlock", 12)
-    LED.writeSync(0)
+
 }
