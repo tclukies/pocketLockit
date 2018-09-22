@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Pocket Lockit!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+</head>
+
+<body>
+
+
+    <header>
+        <img class="splash-logo" src="./pocketlocket-1.png">
+        <h1 class="app-name">Pocket Lockit!</h1>
+    </header>
+    
+    <main class="lock-main">
+        <div class="lock-div">
+            <img id="closed-lock" src="./closedlock.png">
+            <img id="open-lock" class= "hidden" src="./openlock.png">
+        </div>
+        <button class="lock-log">Lock Log</button>
+        <button class="sign-out">Sign Out!</button>
+    </main>
+    
+    <footer>
+        Copyright PocketLockit 2018
+    </footer>
+    
+    <script src="lock.js"></script>
+</body>
+</html>
