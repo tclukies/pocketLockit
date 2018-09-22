@@ -1,7 +1,12 @@
+
+var socket = io();
+
 document.querySelector("#open-lock").addEventListener("click", unlock);
 
 function unlock(event) {
     event.preventDefault();
+    socket.emit("unlock", 12)
+
 
     document.getElementById("open-lock").classList.add("hidden")
     document.getElementById("closed-lock").classList.remove("hidden")
@@ -32,6 +37,8 @@ document.querySelector("#closed-lock").addEventListener("click", lock);
 function lock(event) {
     event.preventDefault();
 
+    socket.emit("lock", 42)
+
     document.getElementById("closed-lock").classList.add("hidden")
     document.getElementById("open-lock").classList.remove("hidden")
 
@@ -55,32 +62,31 @@ function lock(event) {
         });
 }
 
-// document.querySelector(".lock-log").addEventListener("click", lockLog);
+document.querySelector(".lock-log").addEventListener("click", lockLog);
 
-// function lockLog(event) {
-//     event.preventDefault();
-//     window.location.href = "/lockLog.html";
-// }
+function lockLog(event) {
+    event.preventDefault();
+    window.location.href = "/lockLog.html";
+}
 
-// document.querySelector(".sign-out").addEventListener("click", signOut);
+document.querySelector(".sign-out").addEventListener("click", signOut);
 
-// function signOut(event) {
-//     event.preventDefault();
-//     window.location.href = "/index.html";
-// }
-
-
-var socket = io();
-//   socket.emit('chat message', $('#m').val());
-document.querySelector("#closed-lock").addEventListener("click", lock)
-document.querySelector("#open-lock").addEventListener("click", unlock)
-
-
-function lock(){
-    socket.emit("lock", 42)
+function signOut(event) {
+    event.preventDefault();
+    window.location.href = "/index.html";
 }
 
 
-function unlock(){
-    socket.emit("unlock", 12)
-}
+// //   socket.emit('chat message', $('#m').val());
+// document.querySelector("#closed-lock").addEventListener("click", lock)
+// document.querySelector("#open-lock").addEventListener("click", unlock)
+
+
+// function lock(){
+//     socket.emit("lock", 42)
+// }
+
+
+// function unlock(){
+//     socket.emit("unlock", 12)
+// }
