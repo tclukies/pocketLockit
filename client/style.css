@@ -1,0 +1,111 @@
+/* gill sans bold */
+
+body{
+    background-color: #98C1D9;
+    display: flex;
+    flex-flow: column nowrap;
+    color: #6A6A6A
+}
+
+header{
+    display: flex;
+    height: 40vh;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+    /* margin-top: 2vh; */
+}
+
+.app-name{
+    font-family: 'Gill Sans';
+    font-size: 2.5em;
+    margin: 0px;
+}
+.splash-logo{
+    width: 20vw;
+
+}
+main{
+    display:flex;
+    justify-content: center;
+}
+.signin{
+    display:flex;
+    flex-flow: column;
+    align-items: center;
+    width: 60vw;
+    background-color: #000080;
+    border-radius: 15px;
+    margin-top: 2vh;
+}
+.submit{
+    background-color: #00A878;
+   margin-top: 2vh;
+   margin-bottom: 2vh;
+   width: 20vw;
+   border-radius: 15px;
+}
+.signin label{
+    font-size: 1.5em;
+}
+
+footer{
+    font-size: .7em;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    position: fixed;
+    bottom: 0;
+}
+
+.lock-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.lock-log, .sign-out{
+    background-color: #00A878;
+    margin-top: 6vh;
+    margin-bottom: 2vh;
+    width: 25vw;
+    border-radius: 15px;
+}
+
+.lock-log-cards{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center
+}
+
+.cardDiv{
+    background-color: #000080;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    border-radius: 15px;
+
+}
+
+.lock-log-main{
+    display:flex; 
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.go-back{
+    background-color: #00A878;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 20vw;
+    border-radius: 15px;
+
+}
+
+.hidden{
+    display: none
+}
