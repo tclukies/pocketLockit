@@ -39,6 +39,7 @@ function lock(event) {
     event.preventDefault();
     socket.emit("unlock", 12)
 
+    
 
     document.getElementById("closed-lock").classList.add("hidden")
     document.getElementById("open-lock").classList.remove("hidden")
