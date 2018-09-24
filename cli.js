@@ -15,12 +15,12 @@ socket.on("unlock now", onUnlock)
 
 function onUnlock(id){
     console.log("onUnlock", id)
-    LED.writeSync(1);
+    LED.writeSync(0);
 }
 
 socket.on("lock now", onLock)
 
 function onLock(id){
     console.log("onLock", id)
-    LED.writeSync(0)
+    LED.writeSync(1)
 }
