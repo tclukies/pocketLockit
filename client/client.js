@@ -94,8 +94,7 @@ function lock(event) {
         });
 }
 
-console.log("hi")
-function accessAPI() {
+function accessLogAPI() {
     fetch("https://pocket-lockit.herokuapp.com/log/lock/1")
         .then(response => response.json())
         .then(response => displayData(response));
@@ -131,14 +130,7 @@ function displayData(data){
     
 }
 
-document.querySelector(".go-back").addEventListener("click", backToLock)
-
-function backToLock(event){
-    event.preventDefault();
-    window.location.href = "/lock.html"
-}
-
-accessAPI();
+accessLogAPI();
 
 
 
