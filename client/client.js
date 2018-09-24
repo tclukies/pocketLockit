@@ -32,7 +32,7 @@ function unlock(event) {
         .catch(function(error) {
             console.log(error);
         });
-}, 5000)
+}, 5000, lock)
 
 document.querySelector("#closed-lock").addEventListener("click", lock);
 
