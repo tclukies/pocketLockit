@@ -22,7 +22,6 @@ function compareCredentials(event) {
         document.querySelector(".signin").classList.add("hidden")
         document.querySelector(".lock-main").classList.remove("hidden")
     } else {
-        console.log("false");
         document.querySelector(".invalid-login").textContent =
             "Incorrect Login. Please Try Again";
     }
@@ -101,7 +100,6 @@ function accessLogAPI() {
 }
 
 function displayData(data){
-    console.log(data)
     data.logs.forEach(log => {
         var cardDiv = document.createElement("div");
         var status = document.createElement("h3");
