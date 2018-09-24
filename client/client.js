@@ -124,10 +124,7 @@ function displayData(data){
         cardDiv.appendChild(location)
 
         document.querySelector(".lock-log-cards").appendChild(cardDiv)
-
     });
-        
-    
 }
 
 
