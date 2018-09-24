@@ -17,14 +17,14 @@
         <h1 class="app-name">Pocket Lockit!</h1>
     </header>
     <main>
-            <form class="signin">
-                    <label for="">Username</label>
-                    <input type="text" name="username">
-                    <label for="">Password</label>
-                    <input type="password" name="password">
-                    <button type="submit" class="submit"> Log-In! </button>
-                    <p class="invalid-login"></p>
-                </form>
+        <form class="signin">
+            <label for="">Username</label>
+            <input type="text" name="username">
+            <label for="">Password</label>
+            <input type="password" name="password">
+            <button type="submit" class="submit"> Log-In! </button>
+            <p class="invalid-login"></p>
+        </form>
         <div class="lock-main hidden">
             <div class="lock-div">
                 <img id="closed-lock" src="./closedlock.png">
@@ -33,6 +33,12 @@
             <button class="lock-log">Lock Log</button>
             <button class="sign-out">Sign Out!</button>
         </div>
+        <div class="lock-log-div hidden">
+            <button class="go-back">Go Back!</button>
+            <div class="lock-log-cards">
+            </div>
+            <button class="go-back">Go Back!</button>
+        </div>  
     </main>
     <footer>
         Copyright PocketLockit 2018

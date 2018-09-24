@@ -3,7 +3,6 @@ var loginCredentials;
 function accessAPI() {
     fetch("https://pocket-lockit.herokuapp.com/profiles")
         .then(response => response.json())
-        // .then(response => {data = response})
         .then(getData);
 }
 accessAPI();
@@ -99,29 +98,24 @@ document.querySelector(".lock-log").addEventListener("click", lockLog);
 
 function lockLog(event) {
     event.preventDefault();
-    window.location.href = "/lockLog.html";
+    document.querySelector(".lock-log-div").classList.remove("hidden")
+    document.querySelector(".lock-main").classList.add("hidden")    
 }
+
+document.querySelector(".go-back").addEventListener("click", goBack)
+
+function goBack(event){
+    event.preventDefault();
+    document.querySelector(".lock-main").classList.remove("hidden")
+    document.querySelector(".lock-log-div").classList.add("hidden") 
+}
+
 
 document.querySelector(".sign-out").addEventListener("click", signOut);
 
 function signOut(event) {
     event.preventDefault();
-    window.location.href = "/index.html";
+    document.querySelector(".signin").classList.remove("hidden")
+    document.querySelector(".lock-main").classList.add("hidden")
 }
 
-
-//   socket.emit('chat message', $('#m').val());
-// document.querySelector("#closed-lock").addEventListener("click", lock)
-// document.querySelector("#open-lock").addEventListener("click", unlock)
-
-
-// function lock(){
-//     socket.emit("lock", 42)
-
-// }
-
-
-// function unlock(){
-//     socket.emit("unlock", 12)
-
-// }
