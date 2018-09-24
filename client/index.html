@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <title>Pocket Lockit!</title>
@@ -15,20 +16,29 @@
         <img class="splash-logo" src="./pocketlocket-1.png">
         <h1 class="app-name">Pocket Lockit!</h1>
     </header>
-    
-    <main class="lock-main">
-        <div class="lock-div">
-            <img id="closed-lock" src="./closedlock.png">
-            <img id="open-lock" class="hidden" src="./openlock.png">
+    <main>
+            <form class="signin">
+                    <label for="">Username</label>
+                    <input type="text" name="username">
+                    <label for="">Password</label>
+                    <input type="password" name="password">
+                    <button type="submit" class="submit"> Log-In! </button>
+                    <p class="invalid-login"></p>
+                </form>
+        <div class="lock-main hidden">
+            <div class="lock-div">
+                <img id="closed-lock" src="./closedlock.png">
+                <img id="open-lock" class="hidden" src="./openlock.png">
+            </div>
+            <button class="lock-log">Lock Log</button>
+            <button class="sign-out">Sign Out!</button>
         </div>
-        <button class="lock-log">Lock Log</button>
-        <button class="sign-out">Sign Out!</button>
     </main>
-    
     <footer>
         Copyright PocketLockit 2018
     </footer>
-    
+
     <script src="./client.js"></script>
 </body>
+
 </html>
