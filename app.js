@@ -13,10 +13,10 @@ app.get('/', function(req, res){
 
 io.on('connection', function(socket){
   console.log('a user connected', socket.id);
+
   socket.on('lock', function(msg){
     console.log('lock: ' + msg);
     socket.broadcast.emit("lock now", msg);
-
   });
   socket.on('unlock', function(msg){
     console.log('unlock: ' + msg);
@@ -28,6 +28,7 @@ io.on('connection', function(socket){
   socket.on('unlock now', function(msg){
     console.log('unlock now: ' + msg);
   });
+  
   socket.on('disconnect', function(){
     console.log('user disconnected');
   });

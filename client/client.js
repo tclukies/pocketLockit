@@ -6,7 +6,7 @@ document.querySelector("#open-lock").addEventListener("click", unlock);
 
 function unlock(event) {
     event.preventDefault();
-    socket.emit("lock", 42)
+    socket.emit("unlock", 42)
 
 
     document.getElementById("open-lock").classList.add("hidden")
@@ -37,7 +37,7 @@ document.querySelector("#closed-lock").addEventListener("click", lock);
 
 function lock(event) {
     event.preventDefault();
-    socket.emit("unlock", 12)
+    socket.emit("lock", 12)
 
     
 
