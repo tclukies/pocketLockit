@@ -2,7 +2,7 @@ var io= require("socket.io-client")
 const Gpio = require('onoff').Gpio;
 const LED = new Gpio(4, 'out'); // gpio 4 as out
 
-var socket = io(process.env.SOCKET_HOST || "http://localhost:3000");
+var socket = io(process.env.SOCKET_HOST || "https://mysterious-waters-27936.herokuapp.com/");
 //   socket.emit('chat message', $('#m').val());
 
 // function lock(){
