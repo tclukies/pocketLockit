@@ -78,6 +78,7 @@ function signOut(event) {
     event.preventDefault();
     window.location.href = "/index.html";
 }
+}
 
 
 //   socket.emit('chat message', $('#m').val());
