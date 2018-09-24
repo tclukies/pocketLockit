@@ -130,7 +130,7 @@ function displayData(data){
     
 }
 
-accessLogAPI();
+
 
 
 
@@ -138,6 +138,7 @@ document.querySelector(".lock-log").addEventListener("click", lockLog);
 
 function lockLog(event) {
     event.preventDefault();
+    accessLogAPI();
     document.querySelector(".lock-log-div").classList.remove("hidden")
     document.querySelector(".lock-main").classList.add("hidden")    
 }
