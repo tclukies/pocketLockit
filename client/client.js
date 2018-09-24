@@ -4,7 +4,6 @@ var socket = io();
 
 document.querySelector("#open-lock").addEventListener("click", unlock);
 
-
 function unlock(event) {
     event.preventDefault();
     socket.emit("unlock", 42)
@@ -32,7 +31,7 @@ function unlock(event) {
         .catch(function(error) {
             console.log(error);
         });
-setTimeout(unlock, 3000, lock)
+}
 
 document.querySelector("#closed-lock").addEventListener("click", lock);
 
@@ -77,7 +76,6 @@ document.querySelector(".sign-out").addEventListener("click", signOut);
 function signOut(event) {
     event.preventDefault();
     window.location.href = "/index.html";
-}
 }
 
 
