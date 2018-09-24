@@ -94,62 +94,62 @@ function lock(event) {
         });
 }
 
-// function accessLogAPI() {
-//     fetch("https://pocket-lockit.herokuapp.com/log/lock/1")
-//         .then(response => response.json())
-//         .then(response => displayData(response));
-// }
+function accessLogAPI() {
+    fetch("https://pocket-lockit.herokuapp.com/log/lock/1")
+        .then(response => response.json())
+        .then(response => displayData(response));
+}
 
-// function displayData(data){
-//     console.log(data)
-//     data.logs.forEach(log => {
-//         var cardDiv = document.createElement("div");
-//         var status = document.createElement("h3");
-//         var date = document.createElement("p");
-//         var location = document.createElement("p");
+function displayData(data){
+    console.log(data)
+    data.logs.forEach(log => {
+        var cardDiv = document.createElement("div");
+        var status = document.createElement("h3");
+        var date = document.createElement("p");
+        var location = document.createElement("p");
 
-//         cardDiv.className = "cardDiv"
-//         status.className = "status"
-//         date.className = "date"
-//         location.className = "location"
+        cardDiv.className = "cardDiv"
+        status.className = "status"
+        date.className = "date"
+        location.className = "location"
 
-//         var formatDate = new Date(log.status_changed)
+        var formatDate = new Date(log.status_changed)
          
-//         status.textContent = "Status: " + log.status
-//         date.textContent = "Date & Time: " + formatDate.toString().replace("GMT-0600 (Mountain Daylight Time)", "")
-//         location.textContent = "Location Coordinates: " + log.location
+        status.textContent = "Status: " + log.status
+        date.textContent = "Date & Time: " + formatDate.toString().replace("GMT-0600 (Mountain Daylight Time)", "")
+        location.textContent = "Location Coordinates: " + log.location
 
-//         cardDiv.appendChild(status)
-//         cardDiv.appendChild(date)
-//         cardDiv.appendChild(location)
+        cardDiv.appendChild(status)
+        cardDiv.appendChild(date)
+        cardDiv.appendChild(location)
 
-//         document.querySelector(".lock-log-cards").appendChild(cardDiv)
-//     });
-// }
+        document.querySelector(".lock-log-cards").appendChild(cardDiv)
+    });
+}
 
-// document.querySelector(".lock-log").addEventListener("click", lockLog);
+document.querySelector(".lock-log").addEventListener("click", lockLog);
 
-// function lockLog(event) {
-//     event.preventDefault();
-//     accessLogAPI();
-//     document.querySelector(".lock-log-div").classList.remove("hidden")
-//     document.querySelector(".lock-main").classList.add("hidden")    
-// }
+function lockLog(event) {
+    event.preventDefault();
+    accessLogAPI();
+    document.querySelector(".lock-log-div").classList.remove("hidden")
+    document.querySelector(".lock-main").classList.add("hidden")    
+}
 
-// document.querySelector(".go-back").addEventListener("click", goBack)
+document.querySelector(".go-back").addEventListener("click", goBack)
 
-// function goBack(event){
-//     event.preventDefault();
-//     document.querySelector(".lock-main").classList.remove("hidden")
-//     document.querySelector(".lock-log-div").classList.add("hidden") 
-// }
+function goBack(event){
+    event.preventDefault();
+    document.querySelector(".lock-main").classList.remove("hidden")
+    document.querySelector(".lock-log-div").classList.add("hidden") 
+}
 
 
-// document.querySelector(".sign-out").addEventListener("click", signOut);
+document.querySelector(".sign-out").addEventListener("click", signOut);
 
-// function signOut(event) {
-//     event.preventDefault();
-//     document.querySelector(".signin").classList.remove("hidden")
-//     document.querySelector(".lock-main").classList.add("hidden")
-// }
+function signOut(event) {
+    event.preventDefault();
+    document.querySelector(".signin").classList.remove("hidden")
+    document.querySelector(".lock-main").classList.add("hidden")
+}
 
