@@ -4,6 +4,7 @@ var socket = io();
 
 document.querySelector("#open-lock").addEventListener("click", unlock);
 
+setTimeout(
 function unlock(event) {
     event.preventDefault();
     socket.emit("unlock", 42)
@@ -31,7 +32,7 @@ function unlock(event) {
         .catch(function(error) {
             console.log(error);
         });
-}
+}, 5000)
 
 document.querySelector("#closed-lock").addEventListener("click", lock);
 
