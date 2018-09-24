@@ -127,10 +127,6 @@ function displayData(data){
     });
 }
 
-
-
-
-
 document.querySelector(".lock-log").addEventListener("click", lockLog);
 
 function lockLog(event) {
