@@ -143,8 +143,8 @@ socket.on("motion now", onMotion)
 
 function onMotion(){
     console.log("motion now!!!")
-    document.querySelector(".lock-main").classList.add("hidden")
     document.querySelector(".alert-div").classList.remove("hidden")
+    document.querySelector(".lock-main").classList.add("hidden")
 
 }
 
