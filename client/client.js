@@ -148,10 +148,10 @@ function onMotion(){
 
 }
 
-// document.querySelector(".clear-alert").addEventListener("click", clearAlert)
+document.querySelector(".clear-alert").addEventListener("click", clearAlert)
 
-// function clearAlert(event){
-//     event.preventDefault();
-//     document.querySelector(".alert-div").classList.add("hidden")
-//     document.querySelector(".lock-main").classList.remove("hidden")
-// }
+function clearAlert(event){
+    event.preventDefault();
+    document.querySelector(".alert-div").classList.add("hidden")
+    document.querySelector(".lock-main").classList.remove("hidden")
+}
