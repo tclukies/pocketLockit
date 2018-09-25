@@ -29,7 +29,7 @@ function onUnlock(id){
             socket.emit('motion now', 1);
             console.log("tampered!!!!!!")
             console.log(currentValue + " " +lastValue)
-            lastValue = currentValue
+            // lastValue = currentValue
             const timer = setInterval(()=>{
                 if (LED.readSync() === 0) { // if current pin state is 0 (off)
                     LED.writeSync(1); // make it 1 (on)
