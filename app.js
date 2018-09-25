@@ -28,6 +28,8 @@ io.on('connection', function(socket){
     socket.broadcast.emit("motion now", msg);
   });
 
+  
+
   socket.on('lock now', function(msg){
     console.log('lock now: ' + msg);
   });

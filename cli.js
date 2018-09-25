@@ -23,28 +23,27 @@ socket.on("lock now", onLock)
 function onLock(id){
     console.log("onLock", id)
     lock.writeSync(1)
-}
-
-let currentValue = motion.readSync();
-console.log("currentValue" + currentValue)
-
-let lastValue = motion.readSync();
-console.log("lastValue" + lastValue)
-
-iv = setInterval(function() {
-    currentValue = motion.readSync();
-    if (currentValue != lastValue){
-        socket.emit('motion now', 1);
-        console.log("tampered!!!!!!")
-        console.log(currentValue + " " +lastValue)
-        lastValue = currentValue
-        const timer = setInterval(()=>{
-            if (LED.readSync() === 0) { // if current pin state is 0 (off)
-                LED.writeSync(1); // make it 1 (on)
-            } else {
-                LED.writeSync(0); // make it 0 (off)
-            }
-        }, 1000);
+    let currentValue = motion.readSync();
+    console.log("currentValue" + currentValue)
     
-    }
-    }, 200);
+    let lastValue = motion.readSync();
+    console.log("lastValue" + lastValue)
+    
+    iv = setInterval(function() {
+        currentValue = motion.readSync();
+        if (currentValue != lastValue){
+            socket.emit('motion now', 1);
+            console.log("tampered!!!!!!")
+            console.log(currentValue + " " +lastValue)
+            lastValue = currentValue
+            const timer = setInterval(()=>{
+                if (LED.readSync() === 0) { // if current pin state is 0 (off)
+                    LED.writeSync(1); // make it 1 (on)
+                } else {
+                    LED.writeSync(0); // make it 0 (off)
+                }
+            }, 1000);
+        
+        }
+        }, 200);
+}
