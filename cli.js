@@ -5,6 +5,7 @@ const motion = new Gpio(13, 'in'); // gpio 4 as in
 const LED = new Gpio(25, 'out'); // gpio 4 as out
 
 let lockStatus = true
+let tampered = false
 
 var socket = io(process.env.SOCKET_HOST || "http://localhost:3000");
 //   socket.emit('chat message', $('#m').val());
@@ -26,7 +27,7 @@ function onUnlock(id){
     lockStatus = true;
     iv = setInterval(function() {
         currentValue = motion.readSync();
-        if (currentValue != lastValue && lockStatus){
+        if (currentValue != lastValue && lockStatus && tampered){
             socket.emit('motion now', 1);
             console.log("tampered!!!!!!")
             console.log(currentValue + " " +lastValue)
@@ -51,7 +52,8 @@ function onStop(id){
     lastValue = currentValue 
     console.log(lastValue + " " + currentValue)
     
-    LED.writeSync(1);
+    tampered = false
+    LED.writeSync(0)
 
     
 }
