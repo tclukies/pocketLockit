@@ -1,6 +1,8 @@
 var io= require("socket.io-client")
 const Gpio = require('onoff').Gpio;
-const LED = new Gpio(4, 'out'); // gpio 4 as out
+const lock = new Gpio(4, 'out'); // gpio 4 as out
+const motion = new Gpio(13, 'in'); // gpio 4 as in
+
 
 var socket = io(process.env.SOCKET_HOST || "http://localhost:3000");
 //   socket.emit('chat message', $('#m').val());
@@ -15,12 +17,28 @@ socket.on("unlock now", onUnlock)
 
 function onUnlock(id){
     console.log("onUnlock", id)
-    LED.writeSync(0);
+    lock.writeSync(0);
 }
 
 socket.on("lock now", onLock)
 
 function onLock(id){
     console.log("onLock", id)
-    LED.writeSync(1)
+    lock.writeSync(1)
 }
+iv = setInterval(function() {
+    currentValue = motion.readSync();
+    if (currentValue != lastValue){
+        console.log("tampered!!!!!!")
+        console.log(currentValue + " " +lastValue)
+        lastValue = currentValue
+        // const timer = setInterval(()=>{
+        //     if (LED.readSync() === 0) { // if current pin state is 0 (off)
+        //       LED.writeSync(1); // make it 1 (on)
+        //     } else {
+        //       LED.writeSync(0); // make it 0 (off)
+        //     }
+        //   }, 1000);
+    
+    }
+    }, 200);

@@ -129,8 +129,8 @@ function lockLog(event) {
 
 function goBack(event){
     event.preventDefault();
-    document.querySelector(".lock-main").classList.remove("hidden")
     document.querySelector(".lock-log-div").classList.add("hidden") 
+    document.querySelector(".lock-main").classList.remove("hidden")
 }
 
 function signOut(event) {
