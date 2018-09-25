@@ -20,10 +20,10 @@ function onUnlock(id){
     currentValue = motion.readSync();
     console.log("currentValue" + currentValue)
     
-    lastValue = motion.readSync();
-    console.log("lastValue" + lastValue)
-    
 }
+lastValue = motion.readSync();
+console.log("lastValue" + lastValue)
+
         iv = setInterval(function() {
             currentValue = motion.readSync();
             if (currentValue != lastValue){
