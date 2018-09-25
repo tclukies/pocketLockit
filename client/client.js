@@ -139,3 +139,8 @@ function signOut(event) {
     document.querySelector(".lock-main").classList.add("hidden")
 }
 
+socket.on("motion now", onMotion)
+
+function onMotion(){
+    console.log("motion now!!!")
+}
