@@ -4,12 +4,7 @@ const lock = new Gpio(4, 'out'); // gpio 4 as out
 const motion = new Gpio(13, 'in'); // gpio 4 as in
 const LED = new Gpio(25, 'out'); // gpio 4 as out
 
-let lockStatus = false
-let currentValue = motion.readSync();
-console.log("currentValue" + currentValue)
-
-let lastValue = motion.readSync();
-console.log("lastValue" + lastValue)
+let lockStatus = true
 
 var socket = io(process.env.SOCKET_HOST || "http://localhost:3000");
 //   socket.emit('chat message', $('#m').val());
@@ -33,6 +28,11 @@ function onLock(id){
     lockStatus = false
 }
 
+let currentValue = motion.readSync();
+console.log("currentValue" + currentValue)
+
+let lastValue = motion.readSync();
+console.log("lastValue" + lastValue)
 
 iv = setInterval(function() {
     currentValue = motion.readSync();
