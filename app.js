@@ -22,6 +22,12 @@ io.on('connection', function(socket){
     console.log('unlock: ' + msg);
     socket.broadcast.emit("unlock now", msg);
   });
+
+  socket.on('motion now', function(msg){
+    console.log('motion: ' + msg);
+    socket.broadcast.emit("unlock now", msg);
+  });
+
   socket.on('lock now', function(msg){
     console.log('lock now: ' + msg);
   });
