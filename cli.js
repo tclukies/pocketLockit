@@ -23,7 +23,6 @@ function onUnlock(id){
     console.log("onUnlock", id)
     lock.writeSync(0);
     lockStatus = true;
-    lastValue = currentValue;
     (LED.writeSync(0))
 }
 
