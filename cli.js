@@ -17,7 +17,7 @@ socket.on("unlock now", onUnlock)
 function onUnlock(id){
     console.log("onUnlock", id)
     lock.writeSync(0);
-    lockStatus = unlocked
+    lockStatus = false
 }
 
 socket.on("lock now", onLock)
@@ -25,7 +25,7 @@ socket.on("lock now", onLock)
 function onLock(id){
     console.log("onLock", id)
     lock.writeSync(1)
-    lockStatus = locked
+    lockStatus = true
 }
 
 let currentValue = motion.readSync();
@@ -36,7 +36,7 @@ console.log("lastValue" + lastValue)
 
 iv = setInterval(function() {
     currentValue = motion.readSync();
-    if (currentValue != lastValue && lockStatus === locked){
+    if (currentValue != lastValue && lockStatus){
         socket.emit('motion now', 1);
         console.log("tampered!!!!!!")
         console.log(currentValue + " " +lastValue)
