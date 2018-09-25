@@ -17,10 +17,10 @@ socket.on("unlock now", onUnlock)
 function onUnlock(id){
     console.log("onUnlock", id)
     lock.writeSync(0);
-    let currentValue = motion.readSync();
+    currentValue = motion.readSync();
     console.log("currentValue" + currentValue)
     
-    let lastValue = motion.readSync();
+    lastValue = motion.readSync();
     console.log("lastValue" + lastValue)
     
 }
