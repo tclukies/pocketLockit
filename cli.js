@@ -9,9 +9,10 @@ const LED = new Gpio(25, 'out'); // gpio 4 as out
 var socket = io(process.env.SOCKET_HOST || "http://localhost:3000");
 //   socket.emit('chat message', $('#m').val());
 
-function lock(){
-    socket.emit("lock", 99)
-}
+socket.on('motion', function(msg){
+    console.log('motion: ' + msg);
+    socket.broadcast.emit("motion now", msg);
+  });
 
 // lock()
 
