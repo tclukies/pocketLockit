@@ -25,7 +25,7 @@ io.on('connection', function(socket){
 
   socket.on('motion now', function(msg){
     console.log('motion: ' + msg);
-    socket.broadcast.emit("unlock now", msg);
+    socket.broadcast.emit("motion now", msg);
   });
 
   socket.on('lock now', function(msg){
