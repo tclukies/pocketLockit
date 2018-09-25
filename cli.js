@@ -52,7 +52,9 @@ function onStop(id){
     currentValue = motion.readSync();
     lastValue = currentValue 
     console.log(lastValue + " " + currentValue)
+    if (LED.readSync() === 1){
     LED.writeSync(0);
+    }
 }
 
 socket.on("lock now", onLock)
