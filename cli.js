@@ -26,6 +26,13 @@ function onLock(id){
     console.log("onLock", id)
     lock.writeSync(1)
 }
+
+let currentValue = motion.readSync();
+console.log("currentValue" + currentValue)
+
+let lastValue = motion.readSync();
+console.log("lastValue" + lastValue)
+
 iv = setInterval(function() {
     currentValue = motion.readSync();
     if (currentValue != lastValue){
