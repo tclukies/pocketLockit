@@ -28,7 +28,12 @@ io.on('connection', function(socket){
     socket.broadcast.emit("motion now", msg);
   });
 
-  
+  socket.on('stopAlert', function(msg){
+    console.log('stop alert: ' + msg);
+    socket.broadcast.emit("stop alert", msg);
+  });
+
+
 
   socket.on('lock now', function(msg){
     console.log('lock now: ' + msg);

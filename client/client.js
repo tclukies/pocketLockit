@@ -152,7 +152,8 @@ document.querySelector(".clear-alert").addEventListener("click", clearAlert)
 
 function clearAlert(event){
     event.preventDefault();
-    socket.emit("unlock", 12)
+    // socket.emit("unlock", 12)
+    socket.emit("stopAlert", 111)
     document.querySelector(".alert-div").classList.add("hidden")
     document.querySelector(".lock-main").classList.remove("hidden")
 }

@@ -42,6 +42,14 @@ function onUnlock(id){
         }, 200);
 }
 
+socket.on("stop alert", onStop)
+
+function onStop(id){
+    console.log("onStop", id)
+    lastValue = currentValue; 
+    LED.writeSync(0);
+}
+
 socket.on("lock now", onLock)
 
 function onLock(id){
