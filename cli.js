@@ -49,6 +49,7 @@ socket.on("stop alert", onStop)
 function onStop(id){
     console.log("onStop", id)
     lastValue = currentValue; 
+    console.log(lastValue + " " + currentValue)
     LED.writeSync(0);
 }
 
