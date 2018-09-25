@@ -22,6 +22,7 @@ function onUnlock(id){
     
     let lastValue = motion.readSync();
     console.log("lastValue" + lastValue)
+
     console.log("onUnlock", id)
     lock.writeSync(0);
     lockStatus = true;
@@ -48,7 +49,8 @@ socket.on("stop alert", onStop)
 
 function onStop(id){
     console.log("onStop", id)
-    lastValue = currentValue; 
+    currentValue = motion.readSync();
+    lastValue = currentValue 
     console.log(lastValue + " " + currentValue)
     LED.writeSync(0);
 }
