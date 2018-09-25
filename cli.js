@@ -5,6 +5,8 @@ const motion = new Gpio(13, 'in'); // gpio 4 as in
 const LED = new Gpio(25, 'out'); // gpio 4 as out
 
 let lockStatus = true
+let currentValue
+let lastValue
 
 var socket = io(process.env.SOCKET_HOST || "http://localhost:3000");
 //   socket.emit('chat message', $('#m').val());
