@@ -36,6 +36,7 @@ console.log("lastValue" + lastValue)
 iv = setInterval(function() {
     currentValue = motion.readSync();
     if (currentValue != lastValue){
+        socket.emit('motion now', 1);
         console.log("tampered!!!!!!")
         console.log(currentValue + " " +lastValue)
         lastValue = currentValue
