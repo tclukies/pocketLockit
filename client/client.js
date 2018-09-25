@@ -1,4 +1,5 @@
 var loginCredentials;
+var socket = io();
 
 function accessAPI() {
     fetch("https://pocket-lockit.herokuapp.com/profiles")
@@ -12,6 +13,11 @@ function getData(data) {
 }
 
 document.querySelector(".submit").addEventListener("click", compareCredentials);
+document.querySelector("#open-lock").addEventListener("click", unlock);
+document.querySelector("#closed-lock").addEventListener("click", lock);
+document.querySelector(".lock-log").addEventListener("click", lockLog);
+document.querySelector(".go-back").addEventListener("click", goBack)
+document.querySelector(".sign-out").addEventListener("click", signOut);
 
 function compareCredentials(event) {
     event.preventDefault();
@@ -27,16 +33,9 @@ function compareCredentials(event) {
     }
 }
 
-
-var socket = io();
-
-
-document.querySelector("#open-lock").addEventListener("click", unlock);
-
 function unlock(event) {
     event.preventDefault();
     socket.emit("unlock", 42)
-
 
     document.getElementById("open-lock").classList.add("hidden")
     document.getElementById("closed-lock").classList.remove("hidden")
@@ -62,13 +61,9 @@ function unlock(event) {
         });
 }
 
-document.querySelector("#closed-lock").addEventListener("click", lock);
-
 function lock(event) {
     event.preventDefault();
     socket.emit("lock", 12)
-
-    
 
     document.getElementById("closed-lock").classList.add("hidden")
     document.getElementById("open-lock").classList.remove("hidden")
@@ -125,8 +120,6 @@ function displayData(data){
     });
 }
 
-document.querySelector(".lock-log").addEventListener("click", lockLog);
-
 function lockLog(event) {
     event.preventDefault();
     accessLogAPI();
@@ -134,16 +127,11 @@ function lockLog(event) {
     document.querySelector(".lock-main").classList.add("hidden")    
 }
 
-document.querySelector(".go-back").addEventListener("click", goBack)
-
 function goBack(event){
     event.preventDefault();
     document.querySelector(".lock-main").classList.remove("hidden")
     document.querySelector(".lock-log-div").classList.add("hidden") 
 }
-
-
-document.querySelector(".sign-out").addEventListener("click", signOut);
 
 function signOut(event) {
     event.preventDefault();
