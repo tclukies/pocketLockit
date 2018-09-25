@@ -47,6 +47,7 @@ function onUnlock(id){
 
 socket.on("stop alert", onStop)
 
+
 function onStop(id){
     console.log("onStop", id)
     currentValue = motion.readSync();
