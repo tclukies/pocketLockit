@@ -11,15 +11,15 @@ var socket = io(process.env.SOCKET_HOST || "http://localhost:3000");
 
 
 // lock()
-let currentValue = motion.readSync();
-console.log("currentValue" + currentValue)
-
-let lastValue = motion.readSync();
-console.log("lastValue" + lastValue)
 
 socket.on("unlock now", onUnlock)
 
 function onUnlock(id){
+    let currentValue = motion.readSync();
+    console.log("currentValue" + currentValue)
+    
+    let lastValue = motion.readSync();
+    console.log("lastValue" + lastValue)
     console.log("onUnlock", id)
     lock.writeSync(0);
     lockStatus = true;
