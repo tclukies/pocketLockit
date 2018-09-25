@@ -109,3 +109,8 @@ footer{
 .hidden{
     display: none
 }
+
+.alert-div{
+    background-color: red;
+    
+}
