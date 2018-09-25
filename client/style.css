@@ -112,5 +112,17 @@ footer{
 
 .alert-div{
     background-color: red;
-    
+    width: 100vw;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear-alert{
+    background-color: #00A878;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 20vw;
+    border-radius: 15px;
 }
