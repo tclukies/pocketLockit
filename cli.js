@@ -17,7 +17,7 @@ socket.on("unlock now", onUnlock)
 function onUnlock(id){
     console.log("onUnlock", id)
     lock.writeSync(0);
-    lockStatus = false
+    lockStatus = true
 }
 
 socket.on("lock now", onLock)
@@ -25,7 +25,7 @@ socket.on("lock now", onLock)
 function onLock(id){
     console.log("onLock", id)
     lock.writeSync(1)
-    lockStatus = true
+    lockStatus = false
 }
 
 let currentValue = motion.readSync();
