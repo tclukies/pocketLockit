@@ -9,9 +9,9 @@ const LED = new Gpio(25, 'out'); // gpio 4 as out
 var socket = io(process.env.SOCKET_HOST || "http://localhost:3000");
 //   socket.emit('chat message', $('#m').val());
 
-// function lock(){
-//     socket.emit("lock", 99)
-// }
+function lock(){
+    socket.emit("lock", 99)
+}
 
 // lock()
 
@@ -43,11 +43,11 @@ iv = setInterval(function() {
         lastValue = currentValue
         const timer = setInterval(()=>{
             if (LED.readSync() === 0) { // if current pin state is 0 (off)
-              LED.writeSync(1); // make it 1 (on)
+                LED.writeSync(1); // make it 1 (on)
             } else {
-              LED.writeSync(0); // make it 0 (off)
+                LED.writeSync(0); // make it 0 (off)
             }
-          }, 1000);
+        }, 1000);
     
     }
     }, 200);
