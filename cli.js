@@ -27,22 +27,22 @@ function onUnlock(id){
     lockStatus = true;
     iv = setInterval(function() {
         currentValue = motion.readSync();
-        if (currentValue != lastValue && lockStatus){
+        if ((currentValue != lastValue) && lockStatus){
             tampered = true
             socket.emit('motion now', 1);
             console.log("tampered!!!!!!")
             console.log(currentValue + " " +lastValue)
             // lastValue = currentValue
-            const timer = setInterval(()=>{
-                if (LED.readSync() === 0 && tampered) { // if current pin state is 0 (off)
-                    LED.writeSync(1); // make it 1 (on)
-                } else {
-                    LED.writeSync(0); // make it 0 (off)
-                }
-            }, 1000);
-        
+            
         }
-        }, 200);
+    }, 200);
+                    const timer = setInterval(()=>{
+                        if (LED.readSync() === 0 && tampered) { // if current pin state is 0 (off)
+                            LED.writeSync(1); // make it 1 (on)
+                        } else {
+                            LED.writeSync(0); // make it 0 (off)
+                        }
+                    }, 1000);
 }
 
 socket.on("stop alert", onStop)
