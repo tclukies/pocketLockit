@@ -2,7 +2,7 @@
 
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
         body{
             background-color: #98C1D9;
             display: flex;
