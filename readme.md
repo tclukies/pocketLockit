@@ -1,4 +1,4 @@
-#Pocket Lockit! 
+# Pocket Lockit! 
 
 ## Links
 - Hardware Demo: https://www.youtube.com/watch?v=Wlu11Ly7YUQ
