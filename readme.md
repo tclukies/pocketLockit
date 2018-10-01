@@ -1,10 +1,10 @@
 #Pocket Lockit! 
 
-##
-Hardware Demo: https://www.youtube.com/watch?v=Wlu11Ly7YUQ
-Capstone Presentation Link: https://youtu.be/ez8_Rf0qod4
-Front-end deployed link: https://pocket-lockit-app.herokuapp.com/
-Back-end deployed link: https://pocket-lockit.herokuapp.com/lock_log
+## Links
+- Hardware Demo: https://www.youtube.com/watch?v=Wlu11Ly7YUQ
+- Capstone Presentation Link: https://youtu.be/ez8_Rf0qod4
+- Front-end deployed link: https://pocket-lockit-app.herokuapp.com/
+- Back-end deployed link: https://pocket-lockit.herokuapp.com/lock_log
 
 
 ## The Problem
